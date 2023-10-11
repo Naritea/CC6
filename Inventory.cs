@@ -8,27 +8,35 @@ namespace Syntax4
 {
     class Inventory
     {
-        List<Item> Inv = new List<Item>();
-        
+        public IDictionary<string, int> Inv = new Dictionary<string, int>();
+        public IDictionary<string, int> itemTypes = new Dictionary<string, int>();
+        itemTypes.Add("Small Potion", 25); //numbers are the % increase in stats
+        itemTypes.Add("Large Potion", 50);
+        itemTypes.Add("Small Biscuit", 25);
+        itemTypes.Add("Large Biscuit", 50);
 
-        public static addItem()
+    }
+    public void addItem()
+    {
+        Console.WriteLine("What item would you like to add?");
+        Console.WriteLine("1. Small Potion");
+        Console.WriteLine("2. Large Potion");
+        Console.WriteLine("3. Small Biscuit");
+        Console.WriteLine("4. Large Biscuit");
+        Console.ReadLine();
+
+    }
+
+    public void useItem()
+    {
+
+    }
+
+    public void getItem()
+    {
+        foreach (var kvp in itemTypes)
         {
-            Item potion = new Item();
-            Inv.Add(item);
-        }
-        
-        public static useItem()
-        {
-            
-        }
-      
-        static List getItem(List<Item> Inv)
-        {
-            for(int i=0;i<Inv.Count;i++)
-            {
-                Console.WriteLine(Inv[i].name);
-            }
-            return Inv;
+        Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
         }
     }
 }
