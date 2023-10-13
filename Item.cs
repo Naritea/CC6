@@ -1,35 +1,24 @@
+﻿/*
+ * Created by SharpDevelop.
+ * User: Daryl
+ * Date: 10/13/2023
+ * Time: 3:08 PM
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Syntax4
 {
-    class Item
-    {
-        public int stats = random.Next(5,10);
-        public string potionSmall = "Small Potion";
-        public string potionLarge = "Large Potion";
-        public string biscuitSmall = "Small Biscuit";
-        public string biscuitLarge = "Large Biscuit";
-        
-        public Dictionary<string, int> items = new Dictionary<string, int>();
-
-        public Items(itemName, itemStats){
-            items. add(itemName, itemStats);
-        }
-
-        public static StrengthBuffs()
-        {
-            int value = random.Next(5,10);
-            Console.WriteLine(value);
-        }
-
-        public static DefenseBuffs()
-        {
-            int value = random.Next(5,10)
-            Console.WriteLine(value);
-        }
-    }
+	/// <summary>
+	/// Description of Item.
+	/// </summary>
+	public class Item
+	{
+		public string itemName;
+		public string itemQuantity;
+		public Item()
+		{
+		}
+	}
 }
