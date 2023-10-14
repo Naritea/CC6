@@ -15,10 +15,20 @@ namespace Syntax4
 	/// </summary>
 	public class Item
 	{
+		public string[] listofitemNames = {"Small Biscuit", "Large Biscuit", "Small Potion", "Big potion"};
+		public string[] listofitemEffects = {"strBuff", "strBuff", "hpHeal", "hpHeal"};
+		public double[] itemEffectsStrength = {.50, 1, .50, 1};
+		
+		public int itemID;
 		public string itemName;
-		public string itemQuantity;
-		public Item()
+		public string itemEffect;
+		public double itemStrength; 
+		public Item(int desiredID)
 		{
+			itemID = desiredID;
+			itemName = listofitemNames[desiredID];
+			itemEffect = listofitemEffects[desiredID];
+			itemStrength = itemEffectsStrength[desiredID];
 		}
 	}
 }

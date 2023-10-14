@@ -15,13 +15,17 @@ namespace Syntax4
 	/// </summary>
 	public class Player
 	{
+		public Random rnd = new Random();
 		public string playerName;
 		public int maxHp;
 		public int currentHp;
 		public int att;
 		public int def;
 		public int spd;
-		public Random rnd = new Random();
+		public int strBuff = 0;
+		
+		public Inventory inv;
+		
 		
 		public Player(string name, int hp, int attack, int defense, int speed)
 		{
@@ -31,11 +35,13 @@ namespace Syntax4
 			att = attack;
 			def = defense;
 			spd = speed;
+			inv = new Inventory();
 		}
 		public int attackEnemy()
     	{
-			int newAttack = att + rnd.Next(-2, 4);
+			int newAttack = (att + rnd.Next(-2, 4)) + strBuff;
 			Console.WriteLine(playerName + " deals " + newAttack + " damage to the enemy!");
+			strBuff = 0;
 			
 			Console.ReadKey(true);
 			Console.Clear();

@@ -75,7 +75,7 @@ namespace Syntax4
         		
 	        	Console.WriteLine(player.playerName + ": \t\t\t" + enemy.name + ":");
 				Console.WriteLine("HP: " + player.currentHp + "/" + player.maxHp + "\t\t" + "HP: " + enemy.currentHp + "/" + enemy.maxHp);
-				Console.WriteLine("Att: " + player.att);
+				Console.WriteLine("Att: " + player.att + "+" + player.strBuff);
 				Console.WriteLine("Def: " + player.def);
 				Console.WriteLine();
 				Console.WriteLine("Menu:");
@@ -96,6 +96,8 @@ namespace Syntax4
 	                    player.currentHp = player.healSelf();
 	                    break;
 	                case "3":
+	                    Console.Clear();
+	                    player = player.inv.inventoryMenu(player);
 	                    break;
 	                case "4":
 	                    player.isAlive();
@@ -105,7 +107,7 @@ namespace Syntax4
 	                    Console.WriteLine("The enemy takes advantage of your indecision!");
 	                    Console.ReadKey(true);
 	                    break;
-	            
+	    
             	}
 				if (enemy.spd < player.spd && enemy.currentHp > 0) 
 				{
